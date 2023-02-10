@@ -1,0 +1,17 @@
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+@import './variables/global';
+@import './themes/dark';
+@import './themes/light';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--family);
+    color: var(--colors-text);
+    font-weight: var(--fw-light);
+    background-color: var(--colors-bg);
+}
