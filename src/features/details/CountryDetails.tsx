@@ -8,7 +8,7 @@ interface CountryDetailsProps {
 }
 
 const CountryDetails = ({ name = '', navigate }: CountryDetailsProps) => {
-    const {status, error, currentCountry} = useDetails(name);
+    const { status, error, currentCountry } = useDetails(name);
 
     return (
         <>
@@ -16,7 +16,7 @@ const CountryDetails = ({ name = '', navigate }: CountryDetailsProps) => {
             {error && <h2>{error}</h2>}
             {currentCountry && <Info push={navigate} {...currentCountry} />}
         </>
-    )
-}
+    );
+};
 
-export {CountryDetails};
+export { CountryDetails };

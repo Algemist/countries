@@ -7,9 +7,7 @@ export const loadCountryByName = createAsyncThunk<
     { extra: Extra }
 >(
     '@@details/load-country-by-name',
-    (name, {extra: {client, api}}) => {
-        return client.get(api.searchByCountry(name));
-    }
+    (name, { extra: { client, api } }) => client.get(api.searchByCountry(name)),
 );
 export const loadNeighborsByBorder = createAsyncThunk<
     { data: Country[] },
@@ -17,9 +15,7 @@ export const loadNeighborsByBorder = createAsyncThunk<
     { extra: Extra }
 >(
     '@@details/load-neighbors',
-    (borders, {extra: {client, api}}) => {
-        return client.get(api.filterByCode(borders));
-    }
+    (borders, { extra: { client, api } }) => client.get(api.filterByCode(borders)),
 );
 
 type DetailsSlice = {
@@ -34,7 +30,7 @@ const initialState: DetailsSlice = {
     neighbors: [],
     status: 'idle',
     error: null,
-}
+};
 
 const detailsSlice = createSlice({
     name: '@@details',
@@ -57,10 +53,10 @@ const detailsSlice = createSlice({
                 state.currentCountry = action.payload.data[0];
             })
             .addCase(loadNeighborsByBorder.fulfilled, (state, action) => {
-                state.neighbors = action.payload.data.map(country => country.name);
-            })
-    }
+                state.neighbors = action.payload.data.map((country) => country.name);
+            });
+    },
 });
 
-export const {clearDetails} = detailsSlice.actions;
+export const { clearDetails } = detailsSlice.actions;
 export const detailsReducer = detailsSlice.reducer;

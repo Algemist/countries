@@ -1,4 +1,4 @@
-import {Region} from "./regions";
+import { Region } from './regions';
 
 type Currency = {
     code: string;
@@ -17,7 +17,7 @@ export type Country = {
     nativeName: string;
     flag: string;
     flags: {
-        png: string ,
+        png: string,
         svg: string,
     };
     region: Region;

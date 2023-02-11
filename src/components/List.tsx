@@ -26,6 +26,4 @@ interface ListProps {
     children: ReactNode,
 }
 
-export const List = ({ children }: ListProps) => {
-    return <Wrapper>{children}</Wrapper>;
-};
+export const List = ({ children }: ListProps) => <Wrapper>{children}</Wrapper>;

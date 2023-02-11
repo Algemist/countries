@@ -1,4 +1,4 @@
-import {useSelector} from 'react-redux'
+import { useSelector } from 'react-redux';
 import { SingleValue } from 'react-select';
 import { useAppDispatch } from 'store';
 import { Region } from 'types';
@@ -15,11 +15,11 @@ export const useRegion = (): [Region | '', onSelect] => {
 
     const handleSelect: onSelect = (reg) => {
         if (reg) {
-            dispatch(setRegion(reg.value))
+            dispatch(setRegion(reg.value));
         } else {
             dispatch(setRegion(''));
         }
-    }
+    };
 
     return [region, handleSelect];
-}
+};

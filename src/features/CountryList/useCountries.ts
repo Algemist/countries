@@ -1,11 +1,14 @@
-import {useSelector} from 'react-redux';
-import {useEffect} from 'react';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
-import { loadCountries } from './countriesSlice';
-import { selectCountriesInfo, selectVisibleCountries } from './countriesSelectors';
 import { RootState, useAppDispatch } from 'store';
 import { Country } from 'types';
-import {selectControls} from "../Controls/ControlsSelectors";
+import { loadCountries } from './countriesSlice';
+import {
+    selectCountriesInfo,
+    selectVisibleCountries,
+} from './countriesSelectors';
+import { selectControls } from '../Controls/ControlsSelectors';
 
 export const useCountries = (): [
     Country[],
@@ -14,7 +17,7 @@ export const useCountries = (): [
     const dispatch = useAppDispatch();
     const controls = useSelector(selectControls);
     const countries = useSelector((state: RootState) => selectVisibleCountries(state, controls));
-    const {status, error, qty} = useSelector(selectCountriesInfo);
+    const { status, error, qty } = useSelector(selectCountriesInfo);
 
     useEffect(() => {
         if (!qty) {
@@ -22,5 +25,5 @@ export const useCountries = (): [
         }
     }, [qty, dispatch]);
 
-    return [countries, {status, error, qty}];
-}
+    return [countries, { status, error, qty }];
+};

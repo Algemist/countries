@@ -5,11 +5,10 @@ import { List } from 'components/List';
 import { Card } from 'components/Card';
 import { useCountries } from './useCountries';
 
-
 const CountryList = () => {
     const navigate = useNavigate();
 
-    const [countries, {error, status}] = useCountries();
+    const [countries, { error, status }] = useCountries();
 
     return (
         <>
@@ -49,7 +48,7 @@ const CountryList = () => {
                 </List>
             )}
         </>
-    )
-}
+    );
+};
 
-export {CountryList};
+export { CountryList };

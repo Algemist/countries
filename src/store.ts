@@ -1,12 +1,12 @@
 import axios from 'axios';
-import {configureStore} from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
-import * as api from './config/apiConfig';
 import { themeReducer } from 'features/theme/themeSlice';
 import { controlsReducer } from 'features/Controls/ControlsSlice';
 import { countryReducer } from 'features/CountryList/countriesSlice';
-import {detailsReducer} from "./features/details/detailsSlice";
+import * as api from './config/apiConfig';
+import { detailsReducer } from './features/details/detailsSlice';
 
 export const store = configureStore({
     reducer: {
@@ -24,7 +24,7 @@ export const store = configureStore({
             },
         },
         serializableCheck: false,
-    })
+    }),
 });
 
 export type RootState = ReturnType<typeof store.getState>

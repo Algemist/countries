@@ -12,14 +12,13 @@ export const loadCountries = createAsyncThunk<
 >(
     '@@countries/load-countries',
     async (_, {
-        extra: {client, api},
+        extra: { client, api },
         rejectWithValue,
     }) => {
         try {
             return client.get(api.ALL_COUNTRIES);
         } catch (error) {
-            if (error instanceof Error)
-                return rejectWithValue(error.message);
+            if (error instanceof Error) return rejectWithValue(error.message);
             return rejectWithValue('Unknown error');
         }
     },
@@ -30,8 +29,8 @@ export const loadCountries = createAsyncThunk<
             if (status === 'loading') {
                 return false;
             }
-        }
-    }
+        },
+    },
 );
 
 type CountrySlice = {
@@ -44,7 +43,7 @@ const initialState: CountrySlice = {
     status: 'idle',
     error: null,
     list: [],
-}
+};
 
 const countrySlice = createSlice({
     name: '@@countries',
@@ -63,8 +62,8 @@ const countrySlice = createSlice({
             .addCase(loadCountries.fulfilled, (state, action) => {
                 state.status = 'received';
                 state.list = action.payload.data;
-            })
-    }
-})
+            });
+    },
+});
 
 export const countryReducer = countrySlice.reducer;

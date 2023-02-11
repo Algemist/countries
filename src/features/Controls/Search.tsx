@@ -37,7 +37,7 @@ export const Search = () => {
 
     return (
         <InputContainer>
-            <IoSearch style={{position: 'absolute'}} />
+            <IoSearch style={{ position: 'absolute' }} />
             <Input onChange={handleSearch} value={search} />
         </InputContainer>
     );

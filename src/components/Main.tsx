@@ -14,10 +14,8 @@ interface MainProps {
     children: ReactNode,
 }
 
-export const Main = ({ children }: MainProps) => {
-    return (
-        <Wrapper>
-            <Container>{children}</Container>
-        </Wrapper>
-    );
-};
+export const Main = ({ children }: MainProps) => (
+    <Wrapper>
+        <Container>{children}</Container>
+    </Wrapper>
+);

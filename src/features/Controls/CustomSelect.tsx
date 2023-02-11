@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import Select, {CSSObjectWithLabel, Props} from 'react-select';
+import Select, { CSSObjectWithLabel, Props } from 'react-select';
 import { Region } from 'types';
 
 export type CountryOption = {

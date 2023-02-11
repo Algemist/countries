@@ -1,4 +1,4 @@
-import {useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useAppDispatch } from 'store';
 import { loadNeighborsByBorder } from './detailsSlice';
@@ -15,4 +15,4 @@ export const useNeighbors = (borders: string[] = []) => {
     }, [borders, dispatch]);
 
     return neighbors;
-}
+};
