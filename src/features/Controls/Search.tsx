@@ -4,6 +4,7 @@ import { IoSearch } from 'react-icons/io5';
 import { useSearch } from './useSearch';
 
 const InputContainer = styled.label`
+  position: relative;
   background-color: var(--colors-ui-base);
   padding: 1rem 2rem;
   display: flex;
@@ -36,7 +37,7 @@ export const Search = () => {
 
     return (
         <InputContainer>
-            <IoSearch />
+            <IoSearch style={{position: 'absolute'}} />
             <Input onChange={handleSearch} value={search} />
         </InputContainer>
     );

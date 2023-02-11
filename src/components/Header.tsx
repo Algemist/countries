@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Container } from './Container';
 import {ThemeSwitcher} from "../features/theme/ThemeSwitcher";
+import {Link} from "react-router-dom";
+import { useCleanup } from 'features/Controls/useCleanUp';
 
 const HeaderEl = styled.header`
   box-shadow: var(--shadow);
@@ -14,7 +16,7 @@ const Wrapper = styled.div`
   padding: 2rem 0;
 `;
 
-const Title = styled.a.attrs({
+const Title = styled(Link).attrs({
     to: '/',
 })`
   color: var(--colors-text);
@@ -24,12 +26,13 @@ const Title = styled.a.attrs({
 `;
 
 export const Header = () => {
+    const cleanUp = useCleanup();
 
     return (
         <HeaderEl>
             <Container>
                 <Wrapper>
-                    <Title>Where is the world?</Title>
+                    <Title onClick={cleanUp}>Where is the world?</Title>
                     <ThemeSwitcher />
                 </Wrapper>
             </Container>
