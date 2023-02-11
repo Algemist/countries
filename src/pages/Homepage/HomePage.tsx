@@ -1,7 +1,11 @@
+import {Controls} from "../../features/Controls/Controls";
+import {CountryList} from "../../features/CountryList/CountryList";
+
 const HomePage = () => {
     return (
         <>
-            HomePage
+            <Controls />
+            <CountryList />
         </>
     );
 };
