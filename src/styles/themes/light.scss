@@ -1,4 +1,4 @@
-.app.light {
+body[data-theme='light'] {
   --colors-text: hsl(200, 15%, 8%);
   --colors-bg: hsl(0, 0%, 98%);
   --colors-ui-base: hsl(0, 0%, 100%);
